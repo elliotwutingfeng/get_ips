@@ -1,0 +1,4 @@
+example.com
+example.org
+icann.org
+www.w3.org/standards/
