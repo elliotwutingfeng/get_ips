@@ -14,7 +14,7 @@ jobs:
       with:
         python-version: '3.x'
     - name: Install Python requirements
-    - run: pip install -r requirements.txt
+      run: pip install -r requirements.txt
     - name: Test
       run: pytest --cov --cov-report html
     - name: Upload coverage to Codecov (ubuntu-latest only)
