@@ -16,7 +16,7 @@ jobs:
     - name: Install Python requirements
       run: pip install -r requirements.txt
     - name: Test
-      run: pytest --cov --cov-report html
+      run: pytest --cov
     - name: Upload coverage to Codecov (ubuntu-latest only)
       if: matrix.os == 'ubuntu-latest'
       uses: codecov/codecov-action@v3
