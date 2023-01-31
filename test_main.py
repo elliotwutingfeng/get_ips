@@ -1,3 +1,4 @@
+import sys
 from ipaddress import IPv4Address, IPv6Address, ip_address
 from tempfile import NamedTemporaryFile
 
@@ -34,15 +35,18 @@ def test_get_addr_info():
 
 
 def test_write_ip_list():
-    with NamedTemporaryFile() as tf:
-        fqdns = extract_fqdns(input_filename) + ["example.noexist"]
-        results = get_addr_info(fqdns)
-        output_filename = tf.name
-        write_ip_list(output_filename, results)
-        tf.seek(0)
-        content = tf.read().decode().splitlines()
-        assert content[0] == "# example.com"
-        assert isinstance(ip_address(content[1]), IPv4Address)
+    # Skip this test if on Windows due to Python tempfile bug
+    # See https://github.com/python/cpython/issues/66305
+    if not sys.platform.startswith("win") and not sys.platform.startswith("cygwin"):
+        with NamedTemporaryFile() as tf:
+            fqdns = extract_fqdns(input_filename) + ["example.noexist"]
+            results = get_addr_info(fqdns)
+            output_filename = tf.name
+            write_ip_list(output_filename, results)
+            tf.seek(0)
+            content = tf.read().decode().splitlines()
+            assert content[0] == "# example.com"
+            assert isinstance(ip_address(content[1]), IPv4Address)
 
 
 def test_parser():
