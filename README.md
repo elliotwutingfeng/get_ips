@@ -10,7 +10,7 @@ Get IPv4 and IPv6 addresses of hostnames using [socket.getaddrinfo()](https://do
 
 ## Requirements
 
-Python 3.7
+Python 3.8
 
 ## Setup
 
