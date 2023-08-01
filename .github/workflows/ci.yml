@@ -19,5 +19,5 @@ jobs:
     - name: Test
       run: pytest --cov
     - name: Upload coverage to Codecov (ubuntu-latest only)
-      if: matrix.os == 'ubuntu-latest' && matrix.python-version == "3.11"
+      if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
       uses: codecov/codecov-action@v3
