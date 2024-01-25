@@ -1,9 +1,7 @@
 # get_ips
 
 ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-
-[![Codecov Coverage](https://img.shields.io/codecov/c/github/elliotwutingfeng/get_ips?color=bright-green&logo=codecov&style=for-the-badge&token=63a1xj1fbI)](https://codecov.io/gh/elliotwutingfeng/get_ips)
-
+[![Coveralls](https://img.shields.io/coverallsCoverage/github/elliotwutingfeng/get_ips?logo=coveralls&style=for-the-badge)](https://coveralls.io/github/elliotwutingfeng/get_ips?branch=main)
 [![GitHub license](https://img.shields.io/badge/LICENSE-BSD--3--CLAUSE-GREEN?style=for-the-badge)](LICENSE)
 
 Get IPv4 and IPv6 addresses of hostnames using [socket.getaddrinfo()](https://docs.python.org/3/library/socket.html#socket.getaddrinfo).
