@@ -8,22 +8,24 @@ Get IPv4 and IPv6 addresses of hostnames using [socket.getaddrinfo()](https://do
 
 ## Requirements
 
-Python 3.8
+Python 3.8+
 
 ## Setup
 
 ```shell
-pip install -r requirements.txt
+python3 -m venv venv
+venv/bin/python3 -m pip install --upgrade pip
+venv/bin/python3 -m pip install -r requirements.txt
 ```
 
 ## Testing
 
 ```shell
-pytest --cov --cov-report html
+venv/bin/python3 -m pytest --cov --cov-report html
 ```
 
 ## Usage
 
 ```shell
-python main.py --input-file sample_urls.txt --output-file output.txt
+venv/bin/python3 main.py --input-file sample_urls.txt --output-file output.txt
 ```
