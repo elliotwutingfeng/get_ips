@@ -5,7 +5,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.12", "3.13"]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Check out repository
@@ -19,5 +19,5 @@ jobs:
     - name: Test
       run: pytest --cov
     - name: Upload coverage to Coveralls
-      if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
+      if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.13'
       uses: coverallsapp/github-action@v2
