@@ -120,6 +120,7 @@ def parse_args(args):
         # if the abbreviation is unambiguous
         allow_abbrev=False,
     )
+    parser.color = True
 
     parser.add_argument(
         "-i",
